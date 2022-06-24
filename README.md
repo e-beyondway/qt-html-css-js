@@ -84,7 +84,7 @@
 1. VSCode
 1. Панель разработчика в браузере
 1. Postman
-1. https://regex101.com/111
+1. [regex101.com/](https://regex101.com/)
 
 # Q5
 В идеале зайти с проблемного устройства используя проблемный браузер, открыть панель (инструменты) разработчика. Найти нерабочий элемент и первым делом посмотреть стили. Если со стилями все хорошо – искать зависимость от js. Если проблема в CSS – искать неподдерживаемые хостом стили, возможно отсутствуют префиксы, или вовсе не работает стиль, у safari встречал проблему с background у тегов body и input и position fixed. У IE много проблем, как и у стилей так и в js, css – overflow\min-wight\min-height, js - вроде стрелочных функций нет.
@@ -99,15 +99,15 @@
 
 # Q7
 * Официальные сайты технологий react\vue\nuxt\bootstrap\tailwind
-* github.com
-* habr.ru
-* css-tricks.ru
-* caniuse.com
-* w3schools.com
-* medium.com 
-* learn.javascript.ru
-* codewars.com
-* youtube.com
+* [github.com](https://github.com)
+* [habr.ru](https://habr.ru)
+* [css-tricks.ru](https://css-tricks.ru)
+* [caniuse.com](https://caniuse.com)
+* [w3schools.com](https://w3schools.com)
+* [medium.com](https://medium.com)
+* [learn.javascript.ru](https://learn.javascript.ru)
+* [codewars.com](https://codewars.com)
+* [youtube.com](https://youtube.com)
 
 JS-программирование, мне больше нравится думать, изобретать, автоматизировать, решать задачи.
 
