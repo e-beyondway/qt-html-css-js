@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+# Q1
+### Пользователь
+Пользователю важно ожидаемое поведение элементов, доступность, быстродействие. Минимум шагов для совершения желаемого действия. Верстка не должна быть перегружена, при этом остаётся информативной.
+Важно:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Адаптив/Респонсив;
+1. Оптимизация и загрузка контента – изображения, js, css, аудио и т. д.;
+1. Обработка форм – валидация данных и подсказки;
+1. Кроссбраузерность;
+1. Доступность.
 
-## Available Scripts
+Пользователь не должен бороться с интерфейсом. Сайт должен захватывать и удерживать внимание. В данном разделе к верстке только несколько вопросов – работоспособность и быстродействие.
 
-In the project directory, you can run:
+### Менеджер проекта
+Менеджер проекта воплощает проект (простите за повторение)))). Важно:
+1. Соответствие макета задумке заказчика;
+1. Реализованный функционал;
+1. Понимать сколько времени занимает в данном случае верстка. DeadLine в общем. И что бы «все работало»))).
 
-### `npm start`
+Менеджер проекта как правило знает верстку поверхностно, поэтому делает выводы полагаясь на визуальную часть. В целом отвечает за качество продукта.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Дизайнер
+Дизайнеру важны:
+1.  Шрифт, вся размерность шрифтов;
+1. Отступы;
+1. Тени;
+1. Соответствие цветам;
+1. Соответствие сетки;
+1. Соответствие адаптива/респонсива (если они прорисованы);
+1. Hover, focus, active, visited, disabled и т. д.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Полное соответствие макету. PerfectPixel в разумных пределах (например браузеры по разному отображают шрифт).
 
-### `npm test`
+### Верстальщик
+Верстальщик – тот, кто показывает миру верстку))). Так как верстка — это описание макета на языке браузера, все начинается именно с макета.     
+Плохая верстка получится если:
+1. Плохой макет;
+1. Не правильно используются семантические теги;
+1. Пустые стили;
+1. Частое использование Important;
+1. Селекторы по тегу;
+1. Непонятные и длинные название селекторов по .id и .class;
+1. Разные элементы верстки для разных разрешений, обычно это мобильное меню\шапка…;
+1. Плохая кроссбраузерность.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Верстка должна быть поддерживаемой, в процессе реализации проекта часто меняются дизайн и поведение отдельных элементов. Верстать нужно не для себя, а для других участников проекта и конечного пользователя. В контексте обязанностей верстальщика – все что не нравится остальным участникам проекта – плохая верстка, если это объективно.
 
-### `npm run build`
+### Клиентский программист
+Клиентскому программисту (frontend разработчик) будет плохой верстка:
+1. Куча div в div’ах;
+1. Семантические теги, использование вместо ul\ol\button\a\input div’ы, и подобные случаи;
+1. Не выдерживает переполнение;
+1. Непонятные и длинные название селекторов по .id и .class;
+1. Плохая структура html и «запутанный» css.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+В целом чем проще, тем понятней. Клиентскому программисту не хочется тратить лишнее время и силы на понимание сложностей реализации определенного многослойного фона, разбираться в z-index’ах и т. д. Заботит проблема наследования css, один из вариантов scoped стили (знаю на примере vue.js), контент должен собираться из разных блоков, в любом порядке.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Серверный программист
+Серверному программисту (backend разработчик), по большому счету не важно какая верстка. Как правило современные приложения делятся на frontend и backend. Они взаимодействуют по определенному api. Информация передаётся посредством json объектов.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+В заключении хочу добавить, действительно, данные вопросы зависят от исходных данных. И на ответ по каждому вопросу можно написать книгу. 
+Старался отвечать короче, можно рассмотреть случай если сайт разрабатывается без разделения на frontend и backend части, в роли framework’a laravel или cms wp. Тогда серверному программисту нужно от верстки ровно то что клиентскому.
 
-### `npm run eject`
+Все зависит от задач, которые стоят перед проектом. Если сайт продает сварочные аппараты, то зачем ему доступность для слабовидящих и незрячих? Возможно в организации есть незрячий сотрудник, который будет заниматься закупкой данного аппарата – но такая вероятность стремится к нулю. Тогда верстку у которой отсутствует данная доступность – нельзя назвать плохой.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Q2
+1. Сборщик (webpack, gulp и т. п.);
+1. Разработать стандарт верстки - какая методология (BEM, SMACSS, ECSS), поддерживаемые браузеры, препроцессор css, использовать переменные CSS или SCSS…, фреймворки, поддерживаемые размеры экранов, вопрос доступности и т. д.;
+1. Autoprefixer, cleanCSS, cleanJS, Babel и т. д.;
+1. Линтер и автоформатер;
+1. git.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+К перечисленным выше могу добавить vue.js, tailwindCSS, bootstrap, bulma, ant, vuetify, animate.css, GreenSock, наверное все известные слайдеры. BEM использовал только в наименовании стилей, полноценно, разделяя на html-css-js каждый блок – нет. Очень нравится подход tailwindCSS. Стили scoped решают очень много проблем.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Q3
+- media query
+- autoprefixer
+- babel
+- смотреть поддержку стилей на сайте caniuse.com
+- в идеале использовать родные устройства, можно эмуляторы
+- отзывчивые изображения (srcset size)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Q4
+1. VSCode
+1. Панель разработчика в браузере
+1. Postman
+1. https://regex101.com/111
 
-## Learn More
+# Q5
+В идеале зайти с проблемного устройства используя проблемный браузер, открыть панель (инструменты) разработчика. Найти нерабочий элемент и первым делом посмотреть стили. Если со стилями все хорошо – искать зависимость от js. Если проблема в CSS – искать неподдерживаемые хостом стили, возможно отсутствуют префиксы, или вовсе не работает стиль, у safari встречал проблему с background у тегов body и input и position fixed. У IE много проблем, как и у стилей так и в js, css – overflow\min-wight\min-height, js - вроде стрелочных функций нет.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Всегда нужно пользоваться autoprefixer и babel, и часто поглядывать caniuse.com.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Панели разработчика в браузере более чем достаточно. Можно воспользоваться эмуляторами, если нет устройства с нужным хостом, но это не даст 100% гарантии соответствия с оригинальным хостом.
 
-### Code Splitting
+# Q6
+Уточнить у дизайнера данный вопрос. 
+Отсутствие данных элементов могло произойти по разным причинам, возможно еще прорабатываются, возможно забыл. В любом случае можно и нужно начать верстку.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Q7
+* Официальные сайты технологий react\vue\nuxt\bootstrap\tailwind
+* github.com
+* habr.ru
+* css-tricks.ru
+* caniuse.com
+* w3schools.com
+* medium.com 
+* learn.javascript.ru
+* codewars.com
+* youtube.com
 
-### Analyzing the Bundle Size
+JS-программирование, мне больше нравится думать, изобретать, автоматизировать, решать задачи.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Нравятся наука, микроконтроллеры, строительство, садоводство и музыка. Есть желание в скором будущем собрать автоматический капельный полив, работающий от датчиков влажности, простите, немного не в тему))))
 
-### Making a Progressive Web App
+# Q8
+Меня зовут Сергей, 32 года. Женат на любимой Анне. Имею двух замечательных детей. Мия и Павел, возрастом 1.5 и 3.6 соответственно.
+Мне постоянно нужно изучать что-то новое))). Поэтому обладаю многими знаниями из разных сфер. Общителен, могу разговаривать на любые темы.
+Часто берусь за задачи, выполнение которых слабо представляю, нравится разбираться «по ходу дела».
+В последние 6 лет понял, что интересно программирование. В свободное время занимался изучением ЯП и фрилансом. Начинал изучение с php.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Решал разного рода задачи.
+- Настраивал Nginx+LAMP; 
+- переносил сайты; 
+- выполнял мелкие правки;
+- писал всевозможные калькуляторы;
+- просто выполнял верстку лендингов;
+- разрабатывал новые сайты, простые визитки и интернет магазины на bitrix ( [mosobltrotuar.ru](https://mosobltrotuar.ru) ); 
+- исправлял чужие - [kosmostar.com](https://kosmostar.com), уперлись в umi.cms и архитектуру, которую реализовал предыдущий разработчик. Сайт имеет проблему с кешированием. Когда поднялся вопрос реализации серверной части «с нуля» - заказчик отказался (бюджет). Была исправлена основная верстка, заменены декоративные img на svg. Почти все внутренние страницы сверстаны заново. В итоге работа остановилась, не доведена до конца, но я понял, что такое исправлять чужой код.
 
-### Advanced Configuration
+Пройдя свой путь понял, что хочу погрузиться в одну сферу, и стать в ней профессионалом. Это frontend, это js. Самоучка, нужно систематизировать знания, участвовать в сложных и крутых проектах, работать в команде, и погружаться в глубину, ширина уже достаточна))). 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Спасибо! За то, что прочитали этот текст!))) Надеюсь вы меня пригласите!
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
