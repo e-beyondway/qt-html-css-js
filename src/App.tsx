@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
-import CardCat from "./components/CardCat.js";
+import Card from "./components/Card.tsx";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+export interface CardInterface {
+  id: Number;
+  uptitle: String;
+  onHoverUptitle: String;
+  title: String;
+  subtitle: String;
+  desc: String;
+  weight: String;
+  action: String;
+  onSelectedAction: String;
+  selected: Boolean;
+  disabled: Boolean;
+}
 
-    this.state = {
-      data: [],
-    };
+const App = () => {
+  const [items, setItems] = useState<CardInterface[]>([]);
+  const [loader, setLoader] = useState<Boolean>(true);
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+  useEffect(() => {
+    setLoader(true);
 
-  componentDidMount() {
     const murMur = [
       {
         id: 1,
@@ -56,47 +65,46 @@ class App extends React.Component {
       },
     ];
 
-    this.setState({ data: murMur });
-  }
+    setItems(murMur);
 
-  handleClick(id) {
-    const data = this.state.data;
+    setTimeout(() => setLoader(false), 1000);
+  }, []);
 
-    this.setState({
-      data: data.map((item) => {
+  const handleClick = (id: Number) => {
+    setItems(
+      items.map((item) => {
         if (item.id === id) item.selected = !item.selected;
         return item;
-      }),
-    });
-  }
-
-  render() {
-    const items = this.state.data;
-
-    const cards = (className) =>
-      items.map((item) => (
-        <CardCat
-          className={
-            " " +
-            className +
-            (item.disabled ? " disabled" : "") +
-            (item.selected ? " selected" : "")
-          }
-          key={item.id}
-          {...item}
-          onHandleClick={this.handleClick}
-        />
-      ));
-
-    return (
-      <main className="app">
-        <section className="container">
-          <h1>Ты сегодня покормил кота?</h1>
-          <div className="row">{cards("col")}</div>
-        </section>
-      </main>
+      })
     );
-  }
-}
+  };
+
+  const cards = (className: String) =>
+    items.map((item) => (
+      <Card
+        className={[
+          className,
+          item.disabled ? " disabled" : "",
+          item.selected ? " selected" : "",
+        ]}
+        key={item.id}
+        item={item}
+        onHandleClick={handleClick}
+      />
+    ));
+
+  return (
+    <main className="app">
+      <section className="container">
+        <h1>Ты сегодня покормил кота?</h1>
+        {loader ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="row">{cards("col")}</div>
+        )}
+      </section>
+    </main>
+  );
+};
 
 export default App;
