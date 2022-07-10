@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
-import Card from "./components/Card.tsx";
+import Card from "./components/Card";
 
 export interface CardInterface {
   id: Number;
@@ -87,7 +87,7 @@ const App = () => {
           item.disabled ? " disabled" : "",
           item.selected ? " selected" : "",
         ]}
-        key={item.id}
+        key={item.id as number}
         item={item}
         onHandleClick={handleClick}
       />

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CardInterface } from "../App";
 import "./Card.scss";
-import star from "../././assets/images/star/star.png";
-import star2x from "../././assets/images/star/star@2x.png";
+import cat from "../assets/images/cat/cat.png";
+import cat2x from "../assets/images/cat/cat@2x.png";
 
 interface PropsInterface {
-  onHandleClick: Number;
+  onHandleClick: (id: Number) => void;
   className: String[];
   item: CardInterface;
 }
@@ -21,7 +21,7 @@ const Card = ({ onHandleClick, className, item }: PropsInterface) => {
 
   const handleActionClick = (e: Event) => {
     if (item.disabled) return;
-    e.stopPropagation(); // всплытие, сработает событие и на родительском блоке, что в итоге вернет props.selected в изначальное значение
+    e.stopPropagation();
     onHandleClick(item.id);
   };
 
@@ -83,8 +83,8 @@ const Card = ({ onHandleClick, className, item }: PropsInterface) => {
       <div className="card-cat__body">
         <img
           className="card-cat__bg-image"
-          src={star}
-          srcSet={star2x}
+          src={cat}
+          srcSet={cat2x}
           alt="cat star"
         />
 
