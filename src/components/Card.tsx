@@ -50,7 +50,7 @@ const Card = ({ onHandleClick, className, item }: PropsInterface) => {
       return (
         <span>
           {action},&nbsp;
-          <a href="#!" onClick={() => handleActionClick}>
+          <a className="link" href="#!" onClick={() => handleActionClick}>
             купи.
           </a>
         </span>
@@ -96,9 +96,10 @@ const Card = ({ onHandleClick, className, item }: PropsInterface) => {
           className="card-cat__desc"
           dangerouslySetInnerHTML={{ __html: item.desc as string }}
         ></p>
-        <div className="card-cat__weight">
-          <span>
-            {item.weight} <span>кг</span>
+        <div className="card-cat__weight bage bage--have-postfix">
+          <span className="bage__text">
+            {item.weight}
+            <span className="bage__postfix">кг</span>
           </span>
         </div>
       </div>
